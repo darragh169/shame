@@ -16,5 +16,5 @@
   "scripts": ["background.js"]
   },
   "permissions": ["tabs"],
-  "web_accessible_resources": ["shame.html"]
+  "web_accessible_resources": ["jquery-1.11.2.min.js","shame.html","shame.js"]
 }
