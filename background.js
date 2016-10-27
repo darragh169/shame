@@ -23,8 +23,7 @@ chrome.tabs.onUpdated.addListener(
 	  console.log('bg.js....');
 	  console.log(arguments);
 	  if(changeInfo.url && changeInfo.url.indexOf('facebook.com') > -1){
-	  	chrome.tabs.update(tab.id, {url: chrome.extension.getURL('shame.html')});
-	  	
+	  	chrome.tabs.create({index:0, url: chrome.extension.getURL('shame.html'), active: true});  	
 	  }
 	}
 );
