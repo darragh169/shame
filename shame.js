@@ -5,13 +5,15 @@ $(document).ready(function(){
 	var audio = new Audio('shame.wav');
 	audio.play();
 
-	var $shamesites = $('#shamesites');
+	var $shameTableBody = $('#shameTableBody');
 
 	var res = JSON.parse(localStorage.getItem('shame_shame'));
 
+	var counter = 0;
 	for (var prop in res) {
+		counter+=1;
   		console.log(prop + " = " + res[prop]);
-  		$shamesites.append('<li>' + prop + ' ' + res[prop] + '</li>');
+  		$shameTableBody.append('<tr><td>'+counter+'</td><td>' + prop + '</td><td>' + res[prop] + '</td></tr>');
 	}
 });
 

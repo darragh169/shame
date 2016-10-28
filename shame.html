@@ -5,11 +5,44 @@
 		h1{
 			text-align: center;
 		}
+
+		li{
+			font-size: 16px;
+		}
 		.container{
 			min-width: 200px;
 			max-width: 400px;
 			margin: 0 auto;
 		}
+
+		table, th, td {
+   			border: 1px solid black;
+		}
+
+		table {
+    		border-collapse: collapse;
+    		width: 100%;
+		}
+
+		th {
+		    height: 30px;
+		    text-align: left;
+		}
+
+		td {
+    		height: 30px;
+    		vertical-align: bottom;
+		}
+
+		th, td {
+    		padding: 15px;
+    		text-align: left;
+		}
+
+		tr:hover {
+			background-color: #f5f5f5
+		}
+
 	</style>
 	<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="shame.js"></script>
@@ -19,9 +52,24 @@
 		<h1>SHAME!</h1>
 	</head>
 	<div class="container">
-		<ul id="shamesites">
+		<!-- <ol id="shamesites">
 			
-		</ul>
+		</ol> -->
+		<table id="shameTable">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Shame Site</th>
+					<th>Shame Count</th>
+				</tr>
+			</thead>
+			<tbody id="shameTableBody">
+				
+			</tbody>
+			<tfoot>
+				
+			</tfoot>
+		</table>
 	</div>
 </body>
 </html>
