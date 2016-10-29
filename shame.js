@@ -2,8 +2,10 @@ $(document).ready(function(){
 
 	console.log('shame_shame');
 
-	var audio = new Audio('shame.wav');
-	audio.play();
+	var playShameTone = function(){
+		var audio = new Audio('shame.wav');
+		audio.play();
+	}
 
 	var $shameTableBody = $('#shameTableBody');
 
@@ -15,5 +17,7 @@ $(document).ready(function(){
   		console.log(prop + " = " + res[prop]);
   		$shameTableBody.append('<tr><td>'+counter+'</td><td>' + prop + '</td><td>' + res[prop] + '</td></tr>');
 	}
+
+	playShameTone();
 });
 

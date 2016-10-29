@@ -1,18 +1,19 @@
 {
   "manifest_version": 2,
-  "name": "My Cool Extension",
+  "name": "Shame!",
   "version": "0.1",
   "browser_action": {
     "default_icon": "download.png"
   },
-  "content_scripts": [
+  "permissions": ["tabs","activeTab","http://*/","https://*/"],
+  /*"content_scripts": [
   {
     "matches": ["<all_urls>"],
+    "css": ["shame_toast.css"],
     "js": ["jquery-1.11.2.min.js","content.js"]
-  }],
+  }],*/
   "background": {
   "scripts": ["background.js"]
   },
-  "permissions": ["tabs"],
-  "web_accessible_resources": ["jquery-1.11.2.min.js","shame.html","shame.js","shame.wav"]
+  "web_accessible_resources": ["shame.wav","jquery-3.0.0.min.js","shame_toast.css","shame_toast.js","shame.html","shame.js","shame.wav"]
 }

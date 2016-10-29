@@ -20,12 +20,19 @@ chrome.runtime.onMessage.addListener(
 chrome.tabs.onUpdated.addListener(
 	function(tabId, changeInfo, tab){
 	  // Send a message to the active tab
+
+	  var currentWebsiteToShame = 'github'
+
 	  console.log('bg.js....');
 	  console.log(arguments);
-	  if(changeInfo.url && changeInfo.url.indexOf('facebook.com') > -1){
-	  	debugger;
-	  	updateStorageObject('facebook.com');
+	  if(changeInfo.url && changeInfo.url.indexOf(currentWebsiteToShame) > -1){
+	  	updateStorageObject(currentWebsiteToShame);
 	  	commitToLocalStorage();
+
+	    
+	   	chrome.tabs.insertCSS(tabId, { file: 'shame_toast.css'});
+	   	chrome.tabs.executeScript(tabId, { file: 'jquery-3.0.0.min.js' });
+	  	chrome.tabs.executeScript(tabId, { file: 'shame_toast.js' }); 
 
 	  	if(_shameTab){
 	  		chrome.tabs.reload(_shameTab.id); 
